@@ -109,7 +109,13 @@ const SignIn: React.FC = () => {
                   setIsLoading={setIsLoading}
                 />
               )}
-              {identity === "client" && <ClientSignIn />}
+              {identity === "client" && (
+                <ClientSignIn
+                  setIdentity={setIdentity}
+                  setSignInSuccess={setSignInSuccess}
+                  setIsLoading={setIsLoading}
+                />
+              )}
             </>
           )}
         </DialogContent>
