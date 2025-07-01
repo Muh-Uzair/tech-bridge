@@ -2,6 +2,10 @@ import React from "react";
 import NavBar from "./NavBar";
 import MakingBridge from "./MakingBridge";
 import TechBridgeDoes from "./TechBridgeDoes";
+import SearchBarCTA from "./SearchBarCTA";
+import OnTechBridge from "./OnTechBridge";
+import TechBridgeCriteria from "./TechBridgeCriteria";
+import LandingPageFooter from "./LandingPageFooter";
 
 const LandingPage: React.FC = () => {
   // VARS
@@ -14,7 +18,11 @@ const LandingPage: React.FC = () => {
       <NavBar />
       <main className="mt-[50px]">
         <MakingBridge />
+        <SearchBarCTA />
         <TechBridgeDoes />
+        <OnTechBridge />
+        <TechBridgeCriteria />
+        <LandingPageFooter />
       </main>
     </div>
   );
