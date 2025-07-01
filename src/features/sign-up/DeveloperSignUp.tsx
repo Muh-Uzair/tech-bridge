@@ -7,7 +7,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import OrSeparator from "@/components/OrSeparator";
+import SignUpFooter from "./SignUpFooter";
 
 const developerSignUpSchema = z.object({
   fullName: z.string().min(1, "Full Name is required"),
@@ -45,9 +46,15 @@ interface Props {
   setIdentity: React.Dispatch<
     React.SetStateAction<"developer" | "client" | "idle">
   >;
+  setSignUpSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+  isLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const DeveloperSignUp: React.FC<Props> = ({ setIdentity }) => {
+const DeveloperSignUp: React.FC<Props> = ({
+  setIdentity,
+  setSignUpSuccess,
+  isLoading,
+}) => {
   // VARS
 
   const developerForm = useForm<DeveloperSignUpValues>({
@@ -65,6 +72,11 @@ const DeveloperSignUp: React.FC<Props> = ({ setIdentity }) => {
   const onDeveloperSubmit = (values: DeveloperSignUpValues) => {
     console.log("Developer form submitted:", values);
 
+    isLoading(true);
+    setTimeout(() => {
+      setSignUpSuccess(true);
+    }, 3000);
+
     developerForm.reset();
   };
   // JSX
@@ -78,7 +90,17 @@ const DeveloperSignUp: React.FC<Props> = ({ setIdentity }) => {
       </DialogHeader>
 
       <div>
-        <Button className="w-full">Sign up with Google</Button>
+        <Button
+          onClick={() => {
+            isLoading(true);
+            setTimeout(() => {
+              setSignUpSuccess(true);
+            }, 3000);
+          }}
+          className="w-full"
+        >
+          Sign up with Google
+        </Button>
       </div>
 
       <OrSeparator />
@@ -170,24 +192,7 @@ const DeveloperSignUp: React.FC<Props> = ({ setIdentity }) => {
             )}
           />
 
-          <div className="flex-col space-y-4">
-            <div>
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setIdentity("idle")}
-                className="w-full"
-              >
-                <ArrowLeft className="mr-1" size={16} />
-                Back
-              </Button>
-            </div>
-            <div>
-              <Button className="w-full" type="submit">
-                Register
-              </Button>
-            </div>
-          </div>
+          <SignUpFooter setIdentity={setIdentity} />
         </form>
       </Form>
     </>
