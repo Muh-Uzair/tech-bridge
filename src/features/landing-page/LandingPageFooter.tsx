@@ -3,7 +3,7 @@ import React from "react";
 const LandingPageFooter: React.FC = () => {
   return (
     <footer className="bg-teal-800 text-stone-50">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-[40px] px-[20px] py-[40px] md:flex-row md:justify-between">
+      <div className="tab:px-[50px] tab:py-[50px] mx-auto flex w-full max-w-[1200px] flex-col gap-[40px] px-[20px] py-[40px] md:flex-row md:justify-between">
         {/* Column 1: Brand */}
         <div className="w-full md:w-1/4">
           <h2 className="text-xl font-bold text-white">TechBridge</h2>

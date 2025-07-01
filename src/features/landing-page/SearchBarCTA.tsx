@@ -40,7 +40,7 @@ const SearchBarCTA: React.FC = () => {
 
   return (
     <div className="mx-w-[1200px] flex w-full items-center justify-center">
-      <div className="w-full px-[20px] py-[30px]">
+      <div className="tab:px-[50px] tab:py-[50px] w-full px-[20px] py-[30px]">
         <div className="mb-[30px] text-center">
           {" "}
           <span className="text-[22px] font-bold">Search For Devs</span>
@@ -64,7 +64,7 @@ const SearchBarCTA: React.FC = () => {
             />
 
             <Button type="submit" className="w-full">
-              Search
+              Find Developers
               <Search />
             </Button>
           </form>

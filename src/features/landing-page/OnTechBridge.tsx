@@ -8,7 +8,7 @@ const OnTechBridge: React.FC = () => {
   // JSX
   return (
     <div className="flex w-full items-center justify-center">
-      <div className="w-full max-w-[1200px] px-[20px] py-[30px]">
+      <div className="tab:px-[50px] tab:py-[50px] w-full max-w-[1200px] px-[20px] py-[30px]">
         <div className="mb-[30px] max-w-[700px]">
           {" "}
           <span className="text-[22px] font-bold text-teal-700">
