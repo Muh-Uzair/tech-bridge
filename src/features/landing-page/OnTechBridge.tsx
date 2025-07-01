@@ -16,7 +16,7 @@ const OnTechBridge: React.FC = () => {
             Digital Product
           </span>
         </div>
-        <div className="max-w-[700px]">
+        <div className="tab:pl-[30px] max-w-[700px]">
           <span className="text-stone-600">
             TechBridge is your gateway to a network of talented developers from
             around the world. <br />

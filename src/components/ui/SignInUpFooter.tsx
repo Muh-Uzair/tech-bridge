@@ -8,7 +8,7 @@ interface Props {
   >;
 }
 
-const SignUpFooter: React.FC<Props> = ({ setIdentity }) => {
+const SignInUpFooter: React.FC<Props> = ({ setIdentity }) => {
   // VARS
 
   // FUNCTIONS
@@ -36,4 +36,4 @@ const SignUpFooter: React.FC<Props> = ({ setIdentity }) => {
   );
 };
 
-export default SignUpFooter;
+export default SignInUpFooter;

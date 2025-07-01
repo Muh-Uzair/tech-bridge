@@ -3,27 +3,26 @@
 import React, { useState } from "react";
 import {
   Dialog,
-  DialogTrigger,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Code2 } from "lucide-react";
-
-import DeveloperSignUp from "./DeveloperSignUp";
-import ClientSignUp from "./ClientSignUp";
+import { Code2, User } from "lucide-react";
+import DeveloperSignIn from "./DeveloperSignIn";
+import ClientSignIn from "./ClientSignIn";
 import AuthLoadingScreen from "@/components/AuthLoadingScreen";
 import AuthSuccess from "@/components/ui/AuthSuccess";
 
-const SignUp: React.FC = () => {
+const SignIn: React.FC = () => {
   // VARS
   const [identity, setIdentity] = useState<"developer" | "client" | "idle">(
     "idle",
   );
-  const [signUpSuccess, setSignUpSuccess] = useState(false);
+  const [signInSuccess, setSignInSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   // FUNCTIONS
@@ -36,40 +35,37 @@ const SignUp: React.FC = () => {
           if (!open) {
             setTimeout(() => {
               setIdentity("idle");
-              setSignUpSuccess(false);
+              setSignInSuccess(false);
               setIsLoading(false);
             }, 1000);
           }
         }}
       >
         <DialogTrigger asChild>
-          <Button variant="outline">Sign up</Button>
+          <Button>Sign in</Button>
         </DialogTrigger>
-
         <DialogContent>
-          {isLoading && !signUpSuccess && (
+          {isLoading && !signInSuccess && (
             <AuthLoadingScreen
-              dialogTitle="Signing Up..."
-              dialogDescription="Please wait while we create your account. This may take a few
+              dialogTitle="Signing In..."
+              dialogDescription="Please wait while we sign in to your account. This may take a few
                   seconds."
             />
           )}
-          {signUpSuccess && (
+          {signInSuccess && (
             <AuthSuccess
-              dialogTitle="Sign Up Successful!"
-              dialogDescription="Your account has been created successfully. You can now log
-                    in and start using the platform."
+              dialogTitle="Sign In Successful!"
+              dialogDescription="You have successfully logged into your account"
             />
           )}
-          {!signUpSuccess && !isLoading && (
+          {!signInSuccess && !isLoading && (
             <>
-              {" "}
-              {identity === "idle" && (
+              {identity === "idle" && !signInSuccess && !isLoading && (
                 <>
                   <DialogHeader>
-                    <DialogTitle>Who are you signing up as?</DialogTitle>
+                    <DialogTitle>Who are you signing in as?</DialogTitle>
                     <DialogDescription>
-                      Select your role to continue with the sign-up process.
+                      Select your role to continue with the sign-in process.
                     </DialogDescription>
                   </DialogHeader>
 
@@ -83,8 +79,8 @@ const SignUp: React.FC = () => {
                         <Code2 className="mb-2 text-teal-500" size={36} />
                         <h3 className="text-lg font-semibold">Developer</h3>
                         <p className="text-muted-foreground text-sm">
-                          Join the platform to find projects and build your
-                          portfolio.
+                          Access your dashboard, manage your profile, and
+                          discover new project opportunities.
                         </p>
                       </CardContent>
                     </Card>
@@ -98,8 +94,8 @@ const SignUp: React.FC = () => {
                         <User className="mb-2 text-teal-500" size={36} />
                         <h3 className="text-lg font-semibold">Client</h3>
                         <p className="text-muted-foreground text-sm">
-                          Post your ideas and connect with skilled developers to
-                          build your product.
+                          Post projects, review developer proposals, and manage
+                          your product development.
                         </p>
                       </CardContent>
                     </Card>
@@ -107,19 +103,13 @@ const SignUp: React.FC = () => {
                 </>
               )}
               {identity === "developer" && (
-                <DeveloperSignUp
+                <DeveloperSignIn
                   setIdentity={setIdentity}
-                  setSignUpSuccess={setSignUpSuccess}
-                  isLoading={setIsLoading}
+                  setSignInSuccess={setSignInSuccess}
+                  setIsLoading={setIsLoading}
                 />
               )}
-              {identity === "client" && (
-                <ClientSignUp
-                  setIdentity={setIdentity}
-                  setSignUpSuccess={setSignUpSuccess}
-                  isLoading={setIsLoading}
-                />
-              )}
+              {identity === "client" && <ClientSignIn />}
             </>
           )}
         </DialogContent>
@@ -128,4 +118,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

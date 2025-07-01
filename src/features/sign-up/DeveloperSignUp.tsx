@@ -23,7 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import OrSeparator from "@/components/OrSeparator";
-import SignUpFooter from "./SignUpFooter";
+import SignUpFooter from "../../components/ui/SignInUpFooter";
 
 const developerSignUpSchema = z.object({
   fullName: z.string().min(1, "Full Name is required"),

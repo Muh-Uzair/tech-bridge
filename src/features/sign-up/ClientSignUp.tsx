@@ -20,7 +20,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import OrSeparator from "@/components/OrSeparator";
-import SignUpFooter from "./SignUpFooter";
+import SignUpFooter from "../../components/ui/SignInUpFooter";
 
 interface Props {
   setIdentity: React.Dispatch<
