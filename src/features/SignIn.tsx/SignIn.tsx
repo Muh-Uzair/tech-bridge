@@ -15,7 +15,7 @@ import { Code2, User } from "lucide-react";
 import DeveloperSignIn from "./DeveloperSignIn";
 import ClientSignIn from "./ClientSignIn";
 import AuthLoadingScreen from "@/components/AuthLoadingScreen";
-import AuthSuccess from "@/components/ui/AuthSuccess";
+import AuthSuccess from "@/components/AuthSuccess";
 
 const SignIn: React.FC = () => {
   // VARS

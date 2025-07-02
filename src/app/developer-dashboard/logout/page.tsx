@@ -1,4 +1,5 @@
 import React from "react";
+import DeveloperLogout from "@/pages/developer-logout-page/index";
 
 const page: React.FC = () => {
   // VARS
@@ -6,7 +7,7 @@ const page: React.FC = () => {
   // FUNCTIONS
 
   // JSX
-  return <div>developer-dashboard/logout</div>;
+  return <DeveloperLogout />;
 };
 
 export default page;

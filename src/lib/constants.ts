@@ -1,4 +1,4 @@
-import { FolderIcon, UserIcon, LogOutIcon } from "lucide-react";
+import { FolderIcon, UserIcon, LogOutIcon, LockKeyhole } from "lucide-react";
 
 export const navItems = [
   {
@@ -10,6 +10,11 @@ export const navItems = [
     href: "/developer-dashboard/profile",
     label: "Profile",
     icon: UserIcon,
+  },
+  {
+    href: "/developer-dashboard/reset-password",
+    label: "Reset Password",
+    icon: LockKeyhole,
   },
   {
     href: "/developer-dashboard/logout",

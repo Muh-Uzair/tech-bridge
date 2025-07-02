@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import React from "react";
-import { DialogDescription, DialogHeader, DialogTitle } from "./dialog";
+import { DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog";
 
 interface Props {
   dialogTitle?: string;

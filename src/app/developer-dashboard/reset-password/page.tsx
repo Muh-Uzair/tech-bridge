@@ -1,5 +1,5 @@
 import React from "react";
-import DeveloperProfile from "@/pages/developer-profile-page/index";
+import DeveloperResetPassword from "@/pages/developer-reset-password-page/index";
 
 const page: React.FC = () => {
   // VARS
@@ -7,7 +7,7 @@ const page: React.FC = () => {
   // FUNCTIONS
 
   // JSX
-  return <DeveloperProfile />;
+  return <DeveloperResetPassword />;
 };
 
 export default page;

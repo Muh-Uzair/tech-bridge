@@ -33,19 +33,21 @@ const NavBarMenu: React.FC = () => {
         <DropdownMenuLabel>Developer Account</DropdownMenuLabel>
         <DropdownMenuGroup>
           <Link href={"/developer-dashboard/projects"}>
-            <DropdownMenuItem> Dashboard</DropdownMenuItem>
+            <DropdownMenuItem>Dashboard</DropdownMenuItem>
           </Link>{" "}
           <Link href={"/developer-dashboard/profile"}>
             <DropdownMenuItem>Profile</DropdownMenuItem>
           </Link>{" "}
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem>
-          <Link href={"/developer-dashboard/logout"}>
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+          <Link href={"/developer-dashboard/reset-password"}>
+            <DropdownMenuItem>Profile</DropdownMenuItem>
           </Link>{" "}
-        </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <Link href={"/developer-dashboard/logout"}>
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </Link>{" "}
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
