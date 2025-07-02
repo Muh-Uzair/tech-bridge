@@ -46,7 +46,7 @@ const DeveloperProjects: React.FC = () => {
   };
 
   return (
-    <div className="tab:px-[50px] space-y-4 p-4">
+    <div className="tab:px-[50px] h-screen space-y-4 p-4">
       <h2 className="mb-2 text-2xl font-semibold text-teal-500">
         Active Projects
       </h2>

@@ -33,7 +33,7 @@ const DeveloperLogout: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-60px)] flex-col items-center justify-center bg-stone-50 px-4 text-center">
+    <div className="dark:bg-background flex min-h-[calc(100vh-60px)] flex-col items-center justify-center bg-stone-50 px-4 text-center">
       <div className="flex max-w-md flex-col items-center gap-4">
         <LogOutIcon className="h-12 w-12 text-teal-500" />
         <h2 className="text-2xl font-semibold text-teal-700">

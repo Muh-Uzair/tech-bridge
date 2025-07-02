@@ -7,7 +7,7 @@ const MakingBridge: React.FC = () => {
 
   // JSX
   return (
-    <div className="tab:px-[50px] tab:py-[50px] bg-teal-500 px-[20px] py-[30px] text-center">
+    <div className="tab:px-[50px] tab:py-[50px] dark:bg-background bg-teal-500 px-[20px] py-[30px] text-center">
       <div>
         <span className="laptopS:text-[35px] text-[30px] font-black text-white">
           Making a bridge between developers and clients

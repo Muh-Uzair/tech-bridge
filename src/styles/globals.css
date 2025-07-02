@@ -90,14 +90,14 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(30.919% 0.00004 271.152);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(28.908% 0.00003 271.152);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(30.919% 0.00004 271.152);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(70.4% 0.14 182.503);
+  --primary-foreground: oklch(29.716% 0.00003 271.152);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);

@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { navItems } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
+import { Moon, Sun } from "lucide-react";
+import TechBridgeLogo from "./TechBridgeLogo";
 
 interface Props {
   children: React.ReactNode;
@@ -11,12 +14,42 @@ interface Props {
 
 const ScreenLayout: React.FC<Props> = ({ children }) => {
   const pathname = usePathname();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const isCurrentlyDark = html.classList.contains("dark");
+    setIsDark(isCurrentlyDark);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      setIsDark(false);
+    } else {
+      html.classList.add("dark");
+      setIsDark(true);
+    }
+  };
 
   return (
     <div>
       {/* Header */}
-      <header className="laptopS:fixed laptopS:top-0 laptopS:right-0 laptopS:left-0 laptopS:h-[50px] laptopS:bg-stone-100 laptopS:border-b-[1px] laptopS:border-teal-500 laptopS:flex hidden items-center px-4">
-        <h1 className="font-semibold text-teal-800">Developer Dashboard</h1>
+      <header className="laptopS:fixed laptopS:top-0 laptopS:right-0 laptopS:left-0 laptopS:h-[50px] laptopS:bg-stone-100 laptopS:border-b-[1px] laptopS:border-teal-500 laptopS:flex dark:bg-background hidden items-center justify-between px-4">
+        <TechBridgeLogo />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+        >
+          {isDark ? (
+            <Sun className="h-5 w-5 text-teal-500" />
+          ) : (
+            <Moon className="h-5 w-5 text-teal-600" />
+          )}
+        </Button>
       </header>
 
       {/* Sidebar */}
@@ -44,7 +77,7 @@ const ScreenLayout: React.FC<Props> = ({ children }) => {
       </aside>
 
       {/* Page Content */}
-      <main>{children}</main>
+      <main className="dark:bg-background">{children}</main>
     </div>
   );
 };

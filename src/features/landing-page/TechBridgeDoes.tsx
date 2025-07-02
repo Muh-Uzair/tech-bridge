@@ -4,9 +4,9 @@ import TechBridgeDoesCard from "./TechBridgeDoesCard";
 
 const TechBridgeDoes: React.FC = () => {
   return (
-    <div className="flex w-full items-center justify-center bg-stone-100">
+    <div className="dark:bg-background flex w-full items-center justify-center bg-stone-100">
       <div className="max-w-[1200px]">
-        <div className="bg-stone-100">
+        <div className="dark:bg-background bg-stone-100">
           <div className="tab:px-[50px] tab:py-[50px] px-[20px] py-[30px]">
             <div className="text-center">
               <span className="text-[22px] font-bold">

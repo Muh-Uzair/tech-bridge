@@ -20,7 +20,7 @@ const DeveloperProfile = () => {
   };
 
   return (
-    <div className="tab:px-[50px] mx-auto max-w-4xl p-4">
+    <div className="tab:px-[50px] mx-auto h-screen max-w-4xl p-4">
       <Card className="shadow-md">
         <CardContent className="laptopS:flex-row flex flex-col items-center gap-8 p-6">
           {/* Avatar + Name */}

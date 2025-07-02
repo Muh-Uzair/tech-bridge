@@ -4,12 +4,12 @@ import TechBridgeDoesCard from "./TechBridgeDoesCard";
 
 const TechBridgeCriteria: React.FC = () => {
   return (
-    <div className="flex w-full items-center justify-center border-[1px] border-teal-700 bg-teal-500">
+    <div className="flex w-full items-center justify-center border-[1px] border-teal-700 bg-teal-500 dark:bg-teal-900">
       <div className="max-w-[1200px]">
-        <div className="bg-teal-500">
+        <div className="bg-teal-500 dark:bg-teal-900">
           <div className="tab:px-[50px] tab:py-[50px] px-[20px] py-[30px]">
             <div className="text-center">
-              <span className="text-[22px] font-bold text-teal-800">
+              <span className="text-[22px] font-bold text-teal-800 dark:text-teal-500">
                 TechBridge&apos;s Criteria For Developers
               </span>
             </div>

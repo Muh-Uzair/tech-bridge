@@ -7,17 +7,17 @@ const OnTechBridge: React.FC = () => {
 
   // JSX
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="dark:bg-background/95 flex w-full items-center justify-center">
       <div className="tab:px-[50px] tab:py-[50px] w-full max-w-[1200px] px-[20px] py-[30px]">
         <div className="mb-[30px] max-w-[700px]">
           {" "}
-          <span className="text-[22px] font-bold text-teal-700">
+          <span className="text-[22px] font-bold text-teal-700 dark:text-teal-500">
             On TechBridge You Can Find Devs That Can Convert Your Idea Into
             Digital Product
           </span>
         </div>
         <div className="tab:pl-[30px] max-w-[700px]">
-          <span className="text-stone-600">
+          <span className="text-stone-600 dark:text-stone-100">
             TechBridge is your gateway to a network of talented developers from
             around the world. <br />
             Whether you&apos;re a startup founder or a business owner, you can

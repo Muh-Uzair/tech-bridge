@@ -39,7 +39,7 @@ const NavBarMenu: React.FC = () => {
             <DropdownMenuItem>Profile</DropdownMenuItem>
           </Link>{" "}
           <Link href={"/developer-dashboard/reset-password"}>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Reset Password</DropdownMenuItem>
           </Link>{" "}
           <DropdownMenuSeparator />
           <DropdownMenuItem>

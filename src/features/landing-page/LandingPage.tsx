@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="w-full">
       <NavBar />
-      <main className="mt-[50px]">
+      <main className="mt-[50px] h-[100vh]">
         <MakingBridge />
         <SearchBarCTA />
         <TechBridgeDoes />

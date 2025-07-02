@@ -39,7 +39,7 @@ const SearchBarCTA: React.FC = () => {
   };
 
   return (
-    <div className="mx-w-[1200px] flex w-full items-center justify-center">
+    <div className="mx-w-[1200px] dark:bg-background/90 flex w-full items-center justify-center">
       <div className="tab:px-[50px] tab:py-[50px] w-full px-[20px] py-[30px]">
         <div className="mb-[30px] text-center">
           {" "}

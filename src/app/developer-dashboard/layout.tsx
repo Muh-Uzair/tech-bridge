@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-white antialiased`}
       >
         <ScreenLayout>
-          <div className="laptopS:pt-[50px] laptopS:pl-[180px] laptopM:pl-[200px] pb-[50px]">
+          <div className="laptopS:pt-[50px] laptopS:pl-[180px] laptopM:pl-[200px] dark:bg-background pb-[50px]">
             {children}
           </div>
         </ScreenLayout>
