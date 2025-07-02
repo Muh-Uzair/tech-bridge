@@ -16,6 +16,7 @@ const ClientSignIn: React.FC<Props> = ({
 }) => {
   return (
     <SignInForm
+      identity="client"
       setIdentity={setIdentity}
       setIsLoading={setIsLoading}
       setSignInSuccess={setSignInSuccess}
