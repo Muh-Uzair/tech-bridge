@@ -15,27 +15,26 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-// ✅ Step 1: Define Zod schema
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
 });
 
-// ✅ Step 2: Infer the type
 type FormValues = z.infer<typeof formSchema>;
 
 const SearchBarCTA: React.FC = () => {
-  // ✅ Step 3: Setup React Hook Form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
     },
   });
+  const router = useRouter();
 
-  // ✅ Step 4: Handle submit
   const onSubmit = (data: FormValues) => {
     console.log("Submitted data:", data);
+    router.push("/search-developers");
   };
 
   return (
