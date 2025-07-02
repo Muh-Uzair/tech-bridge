@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import SignInUpFooter from "@/components/ui/SignInUpFooter";
+import { useCheckUserAuthStore } from "@/stores/useCheckUserAuthStore";
 
 // ✅ Zod schema for validation
 const signInSchema = z.object({
@@ -40,6 +41,7 @@ interface Props {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   dialogTitle: string;
   dialogDescription: string;
+  identity: "idle" | "client" | "developer";
 }
 
 const ClientSignIn: React.FC<Props> = ({
@@ -48,8 +50,9 @@ const ClientSignIn: React.FC<Props> = ({
   setSignInSuccess,
   dialogTitle,
   dialogDescription,
+  identity,
 }) => {
-  // ✅ Form setup
+  // VARS
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -57,13 +60,17 @@ const ClientSignIn: React.FC<Props> = ({
       password: "",
     },
   });
+  const setUserIdentity = useCheckUserAuthStore(
+    (state) => state.setUserIdentity,
+  );
 
-  // ✅ Submit handler
+  // FUNCTION
   const onSubmit = (data: SignInFormValues) => {
     console.log("Sign-in data:", data);
     setIsLoading(true);
     setTimeout(() => {
       setSignInSuccess(true);
+      setUserIdentity(identity);
     }, 3000);
   };
 
@@ -80,6 +87,7 @@ const ClientSignIn: React.FC<Props> = ({
             setIsLoading(true);
             setTimeout(() => {
               setSignInSuccess(true);
+              setUserIdentity(identity);
             }, 3000);
           }}
           className="w-full"

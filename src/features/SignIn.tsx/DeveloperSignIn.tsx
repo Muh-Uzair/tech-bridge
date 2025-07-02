@@ -7,12 +7,14 @@ interface Props {
   >;
   setSignInSuccess: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  identity: "developer" | "client" | "idle";
 }
 
 const DeveloperSignIn: React.FC<Props> = ({
   setIdentity,
   setIsLoading,
   setSignInSuccess,
+  identity,
 }) => {
   return (
     <SignInForm
@@ -23,6 +25,7 @@ const DeveloperSignIn: React.FC<Props> = ({
       dialogDescription={
         "Sign in to manage your projects and connect with clients."
       }
+      identity={identity}
     />
   );
 };

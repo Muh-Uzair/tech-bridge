@@ -107,6 +107,7 @@ const SignIn: React.FC = () => {
                   setIdentity={setIdentity}
                   setSignInSuccess={setSignInSuccess}
                   setIsLoading={setIsLoading}
+                  identity={identity}
                 />
               )}
               {identity === "client" && (
